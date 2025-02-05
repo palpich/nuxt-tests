@@ -10,4 +10,10 @@ describe("Routing", () => {
       expect(component.html()).toContain("foo page");
     });
   }
+
+  test('setup middleware', async () => {
+    const component = await mountSuspended(App, { route: "/middleware/from" });
+
+    expect(component.html()).toContain("to page");
+  })
 });
